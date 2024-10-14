@@ -11,13 +11,17 @@ class Track:
 
         self.__segments.append((coord_from, coord_to))
 
-        if 3 < len(self.__segments) and (self.__segments[-2][0][3] is None or self.__segments[-2][1][3] is None):
+        if 3 < len(self.__segments) and (self.__segments[-2][0][1] is None or self.__segments[-2][1][1] is None):
             for i in range(2):
-                if self.__segments[-2][i][3] is None:
+                if self.__segments[-2][i][1] is None:
                     self.__segments[-2] = (
-                        *self.__segments[-2][i][:3],
-                        (self.__segments[-3][i][3] + self.__segments[-1][i][3]) * 0.5
-                    )
+                        *self.__segments[-2][:i],
+                        (
+                            *self.__segments[-2][i][:1],
+                            (self.__segments[-3][i][1] + self.__segments[-1][i][1]) * 0.5,
+                            *self.__segments[-2][i][2:]
+                        ),
+                        *self.__segments[-1][i+1:])
             print('Auto-Corrected Track Segments')
             print(self.__segments[-3])
             print(self.__segments[-2])
