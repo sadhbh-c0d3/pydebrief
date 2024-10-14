@@ -32,4 +32,4 @@ class Track:
     def headers(cls) -> Tuple[str]:
         """ForeFlight.CloudAhoy style headers associated with data
         """
-        return (('seconds/t','degrees/lat','degrees/lon','feet/Alt (gps)'),) * 2
+        return (('seconds/t','feet/Alt (gps)','degrees/lat','degrees/lon'),) * 2

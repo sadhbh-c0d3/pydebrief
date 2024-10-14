@@ -4,6 +4,10 @@ from . track import Track
 from typing import Tuple
 
 
+# RadarBox gives all data as AGL
+ground_alt = 319.0
+
+
 class FlightData:
     def __init__(self, timestamp: int, tail: str, track: Track, positions: Positions):
         self.__timestamp = timestamp
@@ -35,9 +39,13 @@ class FlightData:
             if abs(ts_diff) > 0.00001:
                 print("ERROR: Track does not match Positions 1-to-1")
                 break
-            coord_lat, coord_lon, coord_alt  = coord_from[1:]
+            coord_alt, coord_lat, coord_lon = coord_from[1:]
             pos_alt, pos_lat, pos_lon, pos_hdg = position[1:]
-            yield (coord_ts, coord_alt, coord_lat, coord_lon, pos_hdg, pos_alt)
+            avg_alt = (pos_alt + coord_alt) * 0.5
+            avg_lat = (coord_lat + pos_lat) * 0.5
+            avg_lon = (coord_lon + pos_lon) * 0.5
+            alt_gps = ground_alt + avg_alt
+            yield (coord_ts, alt_gps, avg_lat, avg_lon, pos_hdg, avg_alt)
             
     @classmethod
     @property

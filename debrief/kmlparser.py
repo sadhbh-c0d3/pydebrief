@@ -53,9 +53,9 @@ def parse_coordinates(timestamp, coord):
     coord = coord.split(',')
     return (
         parse_timestamp(timestamp),
+        parse_altitude(coord[2]),
         parse_latitude(coord[1]),
-        parse_longtitude(coord[0]),
-        parse_altitude(coord[2])
+        parse_longtitude(coord[0])
     )
 
 
