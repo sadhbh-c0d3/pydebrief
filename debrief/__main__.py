@@ -6,4 +6,4 @@ from . csvwriter import write_csv
 _, inFile, outFile = sys.argv
 print('Will process {} to {}'.format(inFile, outFile))
 flight_data = parse_kml(inFile)
-write_csv(outFile, flight_data)
+write_csv(outFile, flight_data, 3)
