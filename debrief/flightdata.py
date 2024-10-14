@@ -37,7 +37,7 @@ class FlightData:
                 break
             coord_lat, coord_lon, coord_alt  = coord_from[1:]
             pos_alt, pos_lat, pos_lon, pos_hdg = position[1:]
-            yield (coord_ts, coord_alt, coord_lon, coord_lat, pos_hdg, pos_alt)
+            yield (coord_ts, coord_alt, coord_lat, coord_lon, pos_hdg, pos_alt)
             
     @classmethod
     @property
