@@ -5,8 +5,8 @@ class Track:
         self.__segments = []
     
     def add_segment(self,
-            coord_from: Tuple[float, float, float, Optional[float]],
-            coord_to: Tuple[float, float, float, Optional[float]]
+            coord_from: Tuple[float, Optional[float], float, float],
+            coord_to: Tuple[float, Optional[float], float, float]
         ):
 
         self.__segments.append((coord_from, coord_to))
