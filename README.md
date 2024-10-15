@@ -1,5 +1,5 @@
 # $${\color{#3c6491}(Py)}$$ debrief $${\color{gray}|}$$ $${\color{#80a0fa}Pilot\ \color{yellow}Debrief}$$
-Convert AirNav.RadaBox (KML) to ForeFlight.CloudAhoy (CSV)
+Convert AirNav.RadarBox (KML) to ForeFlight.CloudAhoy (CSV)
 
 <img width="480" alt="RadarBox" src="https://github.com/user-attachments/assets/da6622f0-fc15-4a02-a90a-7e12812d67f9">
 
